@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+nav{
+  background-color: #F8BBD0;
+  font-family: 'Vujahday Script', cursive;
+  
+  color: #212121;
+  height: 100px;
+  display: block;
+}
+
+.navbar{
+  text-align: left;
+  font-size: 50px;
+  float: left;
+}
+
+.iconos{
+  display:inline-flexbox;
+  padding: 10px 10px 10px 1000px; 
+  text-align: rigth;
+  /* float: rigth; */
+}
