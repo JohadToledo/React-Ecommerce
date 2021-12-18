@@ -3,7 +3,7 @@ import Compras from "./Compras"
 import Coleccion from "./Coleccion"
 import Acerca from "./Acerca"
 import Favoritos from "./Favoritos"
-import Home from "./Home"
+// import Home from "./Home"
 import Petra from './Petra2.svg';
 
 const Navbar = () =>{
@@ -14,7 +14,7 @@ const Navbar = () =>{
                         </div>
                 <div className='iconos'>
                     <ul>
-                        <li><Home /></li>
+                        <li>Home</li>
                         <li><Acerca /></li>
                         <li><Coleccion /></li>
                         <li><Favoritos /></li>

@@ -2,6 +2,9 @@
 import './App.css';
 import Navbar from './Navbar.js'
 import Producto from './Producto.js'
+import Footer from './Footer'
+import Home from './Home.js';
+
 
 
 function App() {
@@ -14,8 +17,9 @@ function App() {
         
       </header>
       <div><Navbar /></div>
+      <div><Home /></div>
       <div><Producto /></div>
-      
+      <div><Footer /></div>
     </div>
   );
 }

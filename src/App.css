@@ -8,7 +8,7 @@ nav {
   font-family: "Vujahday Script", cursive;
   color: #212121;
   height: 100px;
-  outline: 10px solid #212121;
+  outline: 3px solid #363636;
 }
 
 .navbar {
@@ -42,13 +42,19 @@ li {
   text-decoration: none;
   display: inline-block;
 }
+.home{
+  padding-top: 27vh;
+  padding-bottom: 27vh;
+  padding-left: 17vh;
+  background-color: #acaaaa
+}
+.home-img{
+  /* padding: 5vh; */
+  height-min: 800px;
+  width: 800px;
+}
 
-/* .productos-grid{
-  background-color: rgb(202, 32, 32);
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 18px;
-  padding: 0px 10px 20px 10px;
-  } */
+
 
 
 .card {
@@ -77,4 +83,24 @@ li {
 /* Add some padding inside the card container */
 .container {
   padding: 2px 16px;
+}
+
+
+
+
+
+
+
+
+footer {
+  font-family: inherit;
+  background-color: #363636;
+  padding: 10px;
+  color: white;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+footer a{
+  color: white;
 }
