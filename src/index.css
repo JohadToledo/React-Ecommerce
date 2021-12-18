@@ -12,24 +12,3 @@ code {
     monospace;
 }
 
-nav{
-  background-color: #F8BBD0;
-  font-family: 'Vujahday Script', cursive;
-  
-  color: #212121;
-  height: 100px;
-  display: block;
-}
-
-.navbar{
-  text-align: left;
-  font-size: 50px;
-  float: left;
-}
-
-.iconos{
-  display:inline-flexbox;
-  padding: 10px 10px 10px 1000px; 
-  text-align: rigth;
-  /* float: rigth; */
-}
