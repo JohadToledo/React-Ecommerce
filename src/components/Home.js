@@ -1,7 +1,8 @@
 import React from 'react';
-import Fondo from './fondop.png'
+import Fondo from '../fondop.png'
 
-const Home = ()=>{
+class Home extends React.Component {
+    render() {
     return (
         <div className="home">
             <div >
@@ -10,6 +11,7 @@ const Home = ()=>{
         </div>
         
     )
+}
 }
 
 export default Home

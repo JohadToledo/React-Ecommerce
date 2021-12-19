@@ -1,9 +1,10 @@
 
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.css';
 import Navbar from './Navbar.js'
 import Producto from './Producto.js'
 import Footer from './Footer'
-import Home from './Home.js';
+import Home from './components/Home.js';
 
 
 
