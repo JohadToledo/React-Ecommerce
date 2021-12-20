@@ -1,28 +1,18 @@
-
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.css';
-import Navbar from './Navbar.js'
-import Producto from './components/Producto.js'
-import Footer from './Footer'
-import Home from './components/Home.js';
-
-
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.css";
+import Footer from './components/Footer'
+import Home from "./components/Home.js";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-    
-      <header className="App-header">
-        
-        
-        
-      </header>
-      <div><Navbar /></div>
-      <div><Home /></div>
-      <div><Producto name="Calcetis"/></div>
-      <div><Producto name="Calceta"/></div>
-      <div><Footer /></div>
-    </div>
+    <BrowserRouter>
+      <Footer>
+        <Switch>
+          <Route path="/" component={Home}></Route>
+        </Switch>
+      </Footer>
+    </BrowserRouter>
   );
 }
 
