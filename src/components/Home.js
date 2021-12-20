@@ -1,7 +1,7 @@
 import React from "react";
 import Fondo from "./fondop.png";
 import Navbar from "./Navbar";
-import Producto from "./Producto";
+import Producto from "./Productos";
 
 class Home extends React.Component {
   render() {
