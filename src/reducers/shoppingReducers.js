@@ -37,8 +37,27 @@ export function shoppingReducer(state, action) {
           };
     }
     case TYPES.REMOVE_ONE_FROM_CART: {
+      let itemToRemove = state.cart.find(item => item.id === action.payload)
+
+      return itemToRemove.quantity > 1 
+      ? {
+      ...state,
+      cart:state.cart.map(item =>
+        item.id === action.payload 
+        ? {...item, quantity: item.quantity -1 }
+         : item
+        ),
+      }
+      :{
+        ...state,
+        cart:state.cart.filter(item => item.id !== action.payload),
+      };
     }
     case TYPES.REMOVE_ALL_FROM_CART: {
+      return{
+        ...state,
+        cart:state.cart.filter(item => item.id !== action.payload),
+      }
     }
     case TYPES.CLEAR_CART: {
       return shoppingInitialState;
