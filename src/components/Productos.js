@@ -1,4 +1,5 @@
 import React from 'react';
+import './productos.css'
 
 class Productos extends React.Component {
     state ={
@@ -21,7 +22,8 @@ render() {
         <React.Fragment>
             <div> 
             {this.state.loading || !this.state.title ? (<div> loading...</div>) : (<div>
-                <img alt={this.state.title} src={this.state.image}></img>
+                <div className='title'>{this.state.title}</div>
+                <img className='img' alt={this.state.title} src={this.state.image}></img>
                 </div>)}
             </div>
         </React.Fragment>

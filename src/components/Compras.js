@@ -1,11 +1,34 @@
+import { useReducer } from "react";
 import React from "react";
+import ProdItem from "./prodItem";
+import {
+  shoppingReducer,
+  shoppingInitialState,
+} from "../reducers/shoppingReducers";
 
-const Compras = ()=>{
-    return(
-        <div className="comprar">
-        🛒</div>
-    )
+const Compras = () => {
+  const [state, dispatch] = useReducer(shoppingReducer, shoppingInitialState);
 
-}
+  const { products, cart } = state;
 
-export default Compras
+  const addToCart = (id) => {};
+
+  const delFromCart = () => {};
+
+  const cleanCart = () => {};
+
+  return (
+    <div>
+      <h2>Productos</h2>
+      <article className="box">
+        {products.map((product) => (
+          <ProdItem key={product.id} data={product} addToCart={addToCart} />
+        ))}
+      </article>
+      <h2>Carrito</h2>
+      <article className="box"></article>
+    </div>
+  );
+};
+
+export default Compras;

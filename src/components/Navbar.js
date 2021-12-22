@@ -1,5 +1,5 @@
 import React from "react";
-import Compras from "./Compras";
+// import Compras from "./Compras";
 // import Coleccion from "./Coleccion";
 import Acerca from "../Acerca";
 import Favoritos from "./Favoritos";
@@ -31,7 +31,7 @@ const Navbar = () => {
             <Favoritos />
           </li>
           <li>
-            <Compras />
+            <div><Link to="/compras"></Link>🛒</div>
           </li>
         </ul>
       </div>

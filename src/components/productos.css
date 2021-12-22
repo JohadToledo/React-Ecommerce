@@ -1,0 +1,9 @@
+.img{
+    width: 200px;
+}
+
+.title{
+    font-family: "Vujahday Script", cursive;
+    text-transform: capitalize;
+    /* text-decoration:line-through; */
+}

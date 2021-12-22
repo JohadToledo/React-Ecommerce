@@ -2,6 +2,7 @@ import React from "react";
 import Fondo from "./fondop.png";
 import Navbar from "./Navbar";
 import Producto from "./Productos";
+import Compras from "./Compras"
 
 class Home extends React.Component {
   render() {
@@ -14,6 +15,7 @@ class Home extends React.Component {
           </div>
         </div>
         <Producto />
+        <Compras />
       </React.Fragment>
     );
   }
