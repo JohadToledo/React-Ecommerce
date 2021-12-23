@@ -1,6 +1,7 @@
 import { useEffect, useReducer, useState } from "react";
 import {TYPES} from "../actions/shoppingActions"
 import React from "react";
+import Producto from './Producto'
 import ProdItem from "./prodItem";
 import {prodApi} from "../api"
 import {
@@ -13,13 +14,25 @@ import CartItem from './CartItem'
 const Compras = () => {
   const [state, dispatch] = useReducer(shoppingReducer, shoppingInitialState);
 
-  const { products, cart, data } = state;
+  const { products, cart } = state;
 
-  const onClick = async (e) =>{
-    e.preventDefault();
-    const data = await prodApi();
-    console.log(data);
+  const [productos, setProductos] = useState([])
+
+  const fetchProducts = async () =>{
+    try {
+      const data = await prodApi();
+      console.log(data, 'la nueva')
+      setProductos(data)
+      // console.log(setProductos(data[0]))
+    }catch(err) {
+
+    }
   }
+
+  useEffect(()=>{
+    fetchProducts();
+
+  }, []);
 
   const addToCart = (id) => {
       console.log(id);
@@ -41,20 +54,19 @@ const Compras = () => {
   return (
     <div>
       <h2>Productos</h2>
+      <Producto productos={productos} />
+      
       <article className="box grid-responsive">
         {products.map((product) => (
           <ProdItem key={product.id} data={product} addToCart={addToCart} />
         ))}
-        <button onClick={onClick}>Prod console</button>
+        
       </article>
       <h2>Carrito</h2>
       <article className="box">
       <button onClick={cleanCart}>Clean Cart</button>
       { 
           cart.map((item, index) => <CartItem key={index} data={item} delFromCart={delFromCart} addToCart={addToCart}/>)
-      }
-      { 
-        // data.map((item, index) => <CartItem key={index} data={item.price})
       }
       </article>
     </div>

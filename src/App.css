@@ -84,7 +84,27 @@ li {
 .container {
   padding: 2px 16px;
 }
+.box{
+  padding: 1rem;
+  margin: 1rem;
+  box-shadow: 0 0 1rem #02020225 inset;
+}
 
+.grid-responsive{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.size{
+  height: 150px;
+  width: 150px;
+}
+
+.prod-card{
+  border: thin solid gray;
+  padding: 1rem;
+}
 
 
 
