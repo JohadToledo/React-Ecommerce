@@ -1,20 +1,25 @@
-import { useReducer } from "react";
+import { useEffect, useReducer, useState } from "react";
 import {TYPES} from "../actions/shoppingActions"
 import React from "react";
 import ProdItem from "./prodItem";
+import {prodApi} from "../api"
 import {
   shoppingReducer,
   shoppingInitialState,
 } from "../reducers/shoppingReducers";
-import Productos from './Productos'
 import './compras.css';
 import CartItem from './CartItem'
-// import  ProdApi  from "../../api";
 
 const Compras = () => {
   const [state, dispatch] = useReducer(shoppingReducer, shoppingInitialState);
 
-  const { products, cart } = state;
+  const { products, cart, data } = state;
+
+  const onClick = async (e) =>{
+    e.preventDefault();
+    const data = await prodApi();
+    console.log(data);
+  }
 
   const addToCart = (id) => {
       console.log(id);
@@ -40,12 +45,16 @@ const Compras = () => {
         {products.map((product) => (
           <ProdItem key={product.id} data={product} addToCart={addToCart} />
         ))}
+        <button onClick={onClick}>Prod console</button>
       </article>
       <h2>Carrito</h2>
       <article className="box">
       <button onClick={cleanCart}>Clean Cart</button>
       { 
           cart.map((item, index) => <CartItem key={index} data={item} delFromCart={delFromCart} addToCart={addToCart}/>)
+      }
+      { 
+        // data.map((item, index) => <CartItem key={index} data={item.price})
       }
       </article>
     </div>

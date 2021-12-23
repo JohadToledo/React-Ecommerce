@@ -1,4 +1,5 @@
 import { TYPES } from "../actions/shoppingActions";
+import { prodApi } from "../api";
 
 export const shoppingInitialState = {
   products: [
@@ -10,6 +11,7 @@ export const shoppingInitialState = {
     { id: 6, name: "Prod 6", price: 155 },
   ],
   cart: [],
+  data : prodApi,
 };
 
 export function shoppingReducer(state, action) {
