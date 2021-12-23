@@ -1,7 +1,6 @@
 import React from "react";
 import Fondo from "./fondop.png";
 import Navbar from "./Navbar";
-import Producto from "./Productos";
 import Compras from "./Compras"
 
 class Home extends React.Component {
@@ -14,7 +13,6 @@ class Home extends React.Component {
             <img className="home-img" src={Fondo} alt="Home"></img>
           </div>
         </div>
-        <Producto />
         <Compras />
       </React.Fragment>
     );
