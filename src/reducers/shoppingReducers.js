@@ -1,4 +1,5 @@
 import { TYPES } from "../actions/shoppingActions";
+import useState from 'react';
 
 export const shoppingInitialState = {
   products: [
@@ -8,9 +9,26 @@ export const shoppingInitialState = {
     { id: 4, name: "Prod 4", price: 200 },
     { id: 5, name: "Prod 5", price: 90 },
     { id: 6, name: "Prod 6", price: 155 },
+    { id: 7, name: "Prod 6", price: 155 },
+    { id: 8, name: "Prod 6", price: 155 },
+    { id: 9, name: "Prod 6", price: 155 },
+    { id: 10, name: "Prod 6", price: 155 },
+    { id: 11, name: "Prod 6", price: 155 },
+    { id: 12, name: "Prod 6", price: 155 },
+    { id: 13, name: "Prod 6", price: 155 },
+    { id: 14, name: "Prod 6", price: 155 },
+    { id: 15, name: "Prod 6", price: 155 },
+    { id: 16, name: "Prod 6", price: 155 },
+    { id: 17, name: "Prod 6", price: 155 },
+    { id: 18, name: "Prod 6", price: 155 },
+    { id: 19, name: "Prod 6", price: 155 },
+    { id: 20, name: "Prod 6", price: 155 },
   ],
+  // props: [productos],
   cart: []
 };
+
+// const [productos, setProductos] = useState([])
 
 export function shoppingReducer(state, action) {
   switch (action.type) {

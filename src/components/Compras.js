@@ -1,13 +1,13 @@
 import { useEffect, useReducer, useState } from "react";
 import {TYPES} from "../actions/shoppingActions"
-import React from "react";
-import Producto from './Producto'
-import ProdItem from "./prodItem";
-import {prodApi} from "../api"
 import {
   shoppingReducer,
   shoppingInitialState,
 } from "../reducers/shoppingReducers";
+import React from "react";
+// import Producto from './Producto'
+import ProdItem from "./prodItem";
+import {prodApi} from "../api"
 import './compras.css';
 import CartItem from './CartItem'
 
@@ -23,7 +23,6 @@ const Compras = () => {
       const data = await prodApi();
       console.log(data, 'la nueva')
       setProductos(data)
-      // console.log(setProductos(data[0]))
     }catch(err) {
 
     }
@@ -54,14 +53,13 @@ const Compras = () => {
   return (
     <div>
       <h2>Productos</h2>
-      <Producto productos={productos} />
       
       <article className="box grid-responsive">
-        {products.map((product) => (
-          <ProdItem key={product.id} data={product} addToCart={addToCart} />
+      {productos.map((product) => (
+        <ProdItem key={product.id} data={product} addToCart={addToCart} />
         ))}
         
-      </article>
+        </article>
       <h2>Carrito</h2>
       <article className="box">
       <button onClick={cleanCart}>Clean Cart</button>
@@ -74,3 +72,4 @@ const Compras = () => {
 };
 
 export default Compras;
+        // <Producto productos={productos} />

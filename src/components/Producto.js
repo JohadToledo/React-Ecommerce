@@ -1,6 +1,7 @@
 import React from "react";
 
-const Producto = (props) => {
+
+const Producto = (props, addToCart) => {
   const { productos } = props;
   return (
     <div className="prod-card grid-responsive">
@@ -8,11 +9,12 @@ const Producto = (props) => {
         return (
           <React.Fragment>
             <div className="box">
-              <div key={productos.id}>{producto.title}</div>
+              <div key={producto.id}>{producto.title}</div>
               <div>
                 <img className="size" src={producto.image} alt={producto.title} />
               </div>
                 <div>$ {producto.price}</div>
+                <div><button onClick={() => {addToCart(producto.id)}}>Add</button></div>
             </div>
           </React.Fragment>
         );
