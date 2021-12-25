@@ -1,17 +1,19 @@
 import { useEffect, useReducer, useState } from "react";
 import {TYPES} from "../actions/shoppingActions"
+import {ProdProvider} from "../contexts/prodContext"
 import {
   shoppingReducer,
   shoppingInitialState,
 } from "../reducers/shoppingReducers";
 import React from "react";
-// import Producto from './Producto'
+import Productos from './Productos'
 import ProdItem from "./prodItem";
 import {prodApi} from "../api"
 import './compras.css';
 import CartItem from './CartItem'
 
 const Compras = () => {
+  const [carts, setCarts] = useState(['elena'])
   const [state, dispatch] = useReducer(shoppingReducer, shoppingInitialState);
 
   const { products, cart } = state;
@@ -50,7 +52,13 @@ const Compras = () => {
       dispatch({type:TYPES.CLEAR_CART });
   };
 
+  const updateProd = (title) => {
+    console.log(title)
+  } 
+
   return (
+    <ProdProvider value={{cartProd: carts, 
+    updateProd: updateProd}}>
     <div>
       <h2>Productos</h2>
       
@@ -67,7 +75,9 @@ const Compras = () => {
           cart.map((item, index) => <CartItem key={index} data={item} delFromCart={delFromCart} addToCart={addToCart}/>)
       }
       </article>
+      <Productos />
     </div>
+    </ProdProvider>
   );
 };
 

@@ -24,11 +24,9 @@ export const shoppingInitialState = {
     { id: 19, name: "Prod 6", price: 155 },
     { id: 20, name: "Prod 6", price: 155 },
   ],
-  // props: [productos],
   cart: []
 };
 
-// const [productos, setProductos] = useState([])
 
 export function shoppingReducer(state, action) {
   switch (action.type) {
@@ -36,7 +34,6 @@ export function shoppingReducer(state, action) {
       let newItem = state.products.find(
         (product) => product.id === action.payload
       );
-      // console.log(newItem);
 
       let itemInCart = state.cart.find((item) => item.id === newItem.id);
 
@@ -63,7 +60,7 @@ export function shoppingReducer(state, action) {
       cart:state.cart.map(item =>
         item.id === action.payload 
         ? {...item, quantity: item.quantity -1 }
-         : item
+        : item
         ),
       }
       :{
