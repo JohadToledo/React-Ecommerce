@@ -16,11 +16,10 @@ const Products = () => {
         setData(await response.clone().json());
         setFilter(await response.json());
         setLoading(false);
-        console.log(filter, "viene?");
       }
 
       return () => {
-        componentMounted(false) ;
+        componentMounted = false;
       };
     };
 
@@ -47,8 +46,7 @@ const Products = () => {
   };
 
   const filterProduct = (cat) => {
-    const updatedList = data.filter((x) => x.category === cat);
-    console.log('click');
+    const updatedList = data.filter((x)=>x.category === cat);
     setFilter(updatedList);
   };
 
@@ -103,7 +101,7 @@ const Products = () => {
                       {product.title.substring(0, 12)}...
                     </h5>
                     <p className="card-text lead fw-bold">${product.price}</p>
-                    <NavLink to={`products/${product.id}`} className="btn btn-outline-dark">
+                    <NavLink to={`/products/${product.id}`} className="btn btn-outline-dark">
                       Buy Now
                     </NavLink>
                   </div>

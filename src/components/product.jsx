@@ -24,7 +24,7 @@ const Product = () => {
       setLoading(false);
     };
     getProduct();
-  }, []);
+  }, [id]);
 
   const Loading = () => {
     return <>
@@ -44,10 +44,10 @@ const Product = () => {
     </>;
   };
 
-  const ShowProduct = () => {
+  const ShowProduct = (idx) => {
     return(
         <>
-        <div className="col-md-6">
+        <div className="col-md-6" key={idx}>
           <img
             src={product.image}
             alt={product.title}
