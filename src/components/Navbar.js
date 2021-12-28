@@ -1,8 +1,10 @@
 import React from "react";
 import Petra from "./Petra2.svg";
 import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
+  const state = useSelector((state)=> state.handleCart)
   return (
     <nav >
       <div>
@@ -17,9 +19,9 @@ const Navbar = () => {
             <NavLink to='/acerca'><li className="nav-item">Acerca</li></NavLink>
             <NavLink to="/products"><li className="nav-item">Coleccion</li></NavLink>
             <NavLink to="/favoritos"><li className="nav-item">Favoritos</li></NavLink>
-            <NavLink to="/cart"><li className="nav-item">🛒 (0)</li></NavLink>
             <NavLink to="/login"><li><button>Login</button></li></NavLink>
             <NavLink to="/register"><li><button>Register</button></li></NavLink>
+            <NavLink to="/cart"><li className="nav-item">🛒 ({state.length})</li></NavLink>
         </ul>
       </div>
     </nav>
