@@ -1,10 +1,9 @@
 body{
-  background-color:#fafafa;
-
+  background-color:black;
 }
 
 nav {
-  background-color: #fafafa;
+  background-color: white;
   font-family: "Vujahday Script", cursive;
   color: #212121;
   height: 100px;
@@ -26,9 +25,13 @@ nav {
   margin-left: 20px;
   padding-left: 0px;
 }
+.nav-link{
+  color: black !important;
+  text-decoration: none !important;
+}
 
 .iconos {
-  padding-top: 10px;
+  padding-top: 25px;
   float: right;
 }
 

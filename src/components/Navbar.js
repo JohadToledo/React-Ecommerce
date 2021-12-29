@@ -1,28 +1,45 @@
 import React from "react";
-import Petra from "./Petra2.svg";
+import Petra from "./Petra.png";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const Navbar = () => {
-  const state = useSelector((state)=> state.handleCart)
-  console.log(state)
+  const state = useSelector((state) => state.handleCart);
+  console.log(state);
   return (
-    <nav >
+    <nav>
       <div>
         <div>
-            <NavLink to='/'><img className="logo navbar-brand" src={Petra} alt="logo"></img></NavLink>
+          <NavLink to="/" >
+            <img className="logo navbar-brand" src={Petra} alt="logo"></img>
+          </NavLink>
         </div>
       </div>
 
-      <div className="iconos">
+      <div  className="iconos float-lg-end text-black">
         <ul >
-            <NavLink to='/'><li className="nav-item">Home</li></NavLink>
-            <NavLink to='/acerca'><li className="nav-item">Acerca</li></NavLink>
-            <NavLink to="/products"><li className="nav-item">Coleccion</li></NavLink>
-            <NavLink to="/favoritos"><li className="nav-item">Favoritos</li></NavLink>
-            <NavLink to="/login"><li><button>Login</button></li></NavLink>
-            <NavLink to="/register"><li><button>Register</button></li></NavLink>
-            <NavLink to="/cart"><li className="nav-item">🛒 ({state.length})</li></NavLink>
+          <NavLink to="/" style={{color:"black"}}>
+            <li className="nav-item">Home</li>
+          </NavLink>
+          <NavLink to="/acerca" style={{color:"black"}}>
+            <li className="nav-item">Acerca</li>
+          </NavLink>
+          <NavLink to="/products" style={{color:"black"}}>
+            <li className="nav-item">Coleccion</li>
+          </NavLink>
+          <NavLink to="/login" style={{color:"black"}}>
+            <li>
+              <button>Login</button>
+            </li>
+          </NavLink>
+          <NavLink to="/register">
+            <li>
+              <button>Register</button>
+            </li>
+          </NavLink>
+          <NavLink to="/cart" style={{color:"black"}}>
+            <li className="nav-item"  >🛒 {state.length}</li>
+          </NavLink>
         </ul>
       </div>
     </nav>

@@ -1,4 +1,3 @@
-import {addCart, delCart} from './index.js'
 const cart = []
 
 
@@ -22,7 +21,7 @@ const handleCart = (state = cart, action) =>{
                     }
                 ]
             }
-            break;
+            
 
             case 'DELITEM':
                 const exist1 = state.find((x)=> x.id === product.id)
@@ -33,11 +32,11 @@ const handleCart = (state = cart, action) =>{
                     x.id === product.id ? {...x, quantity: x.quantity - 1} : x
                     )
                 }
-                break;
+                
 
             default:
                 return state;
-                break
+                
     }
 }
 
