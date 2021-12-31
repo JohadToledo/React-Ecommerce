@@ -12,20 +12,23 @@ const Product = () => {
   const {slug} = useParams();
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(false);
+  // const [image, setImage] = useState()
 
   const dispatch = useDispatch();
   const addProduct = (product) => {
     dispatch(addCart(product))
   }
+  
   const getProduct = async () => {
     setLoading(true);
-    setProduct(await fetchProduct());
+    setProduct(await fetchProduct(slug));
     console.log(product)
     setLoading(false);
   };
-
+  
   useEffect(() => {
     getProduct();
+    // setImage( fetchImageURL(product.image.url))
   }, [slug]);
 
   const Loading = () => {
@@ -54,7 +57,7 @@ const Product = () => {
           {loading ? <Loading /> : <>
         <div className="col-md-6" key={product.id}>
           <img
-            src={fetchImageURL(product.image.url)}
+            // src={image}
             alt={product.title}
             height={400}
             width={400}
