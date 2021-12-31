@@ -1,5 +1,5 @@
 import React from "react";
-import Products from "./Products.jsx";
+// import Products from "./Products.jsx";
 import Acerca from "./Acerca"
 
 class Home extends React.Component {
