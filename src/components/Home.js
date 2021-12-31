@@ -1,5 +1,6 @@
 import React from "react";
 import Products from "./Products.jsx";
+import Acerca from "./Acerca"
 
 class Home extends React.Component {
   render() {
@@ -18,7 +19,7 @@ class Home extends React.Component {
             </div>
           </div>
         </div>
-        <Products />
+        <Acerca />
       </React.Fragment>
     );
   }

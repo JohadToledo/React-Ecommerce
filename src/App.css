@@ -131,7 +131,7 @@ footer a{
 	}
    .payment_header
    {
-	   background:rgba(248,187,208,1);
+	   background:#020202;
 	   padding:20px;
        border-radius:20px 20px 0px 0px;
 	   
@@ -172,7 +172,7 @@ footer a{
         color:#fff;
         border-radius:30px;
         padding:5px 10px;
-        background:rgba(248,187,208,1);
+        background:#020202;
         transition:all ease-in-out 0.3s;
     }
 

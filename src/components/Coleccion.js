@@ -5,7 +5,10 @@ import Navbar from './Navbar'
 const Coleccion = ()=>{
     return(
         <React.Fragment>
-            <Navbar />
+            
+            <div>
+                aparece o no?
+            </div>
             
         </React.Fragment>
         
