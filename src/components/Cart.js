@@ -3,6 +3,7 @@ import {useSelector} from 'react-redux'
 import { addCart, delCart } from '../redux/action/index'
 import { NavLink } from "react-router-dom";
 import {  useDispatch} from "react-redux";
+import { fetchImageURL, fetchProduct } from "../api";
 
 const Cart = () => {
     const state = useSelector((state)=> state.handleCart)
@@ -33,7 +34,7 @@ const Cart = () => {
                 <div className="container py-4">
                     <div className="row justify-content-center">
                         <div className="col-md-4">
-                            <img src={product.image} alt={product.title} height="200px" width="180px" />
+                            <img src={fetchImageURL(product.image?.url)} alt={product.title} height="200px" width="180px" />
                         </div>
                         <div className="col-md-4">
                             <h3>{product.title}</h3>
