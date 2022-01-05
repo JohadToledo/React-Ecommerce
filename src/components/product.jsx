@@ -28,7 +28,7 @@ const Product = () => {
   
   useEffect(() => {
     getProduct();
-    // setImage( fetchImageURL(product.image.url))
+    // setImage( fetchImageURL(product.image?.url))
   }, [slug]);
 
   const Loading = () => {
