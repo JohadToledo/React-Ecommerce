@@ -4,10 +4,10 @@ import Skeleton from "react-loading-skeleton";
 import { fetchCategories, fetchImageURL, fetchProducts } from "../api";
 
 const Products = (props) => {
-  const { prod } = props;
+  // const { prod } = props;
   
   const [categories, setCategories] = useState([]);
-  const [products, setProducts] = useState(categories);
+  const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
   
 
@@ -30,7 +30,6 @@ const Products = (props) => {
   useEffect(() => {
     getCategories();
     getProducts()
-    // setImage( fetchImageURL(product.image.url))
   }, []);
   
   const Loading = () => {
@@ -54,9 +53,9 @@ const Products = (props) => {
 
   const filterProduct = (cat) => {
     const updatedList = categories.filter((x)=>x?.name === cat);
-    console.log(categories?.name)
+    // console.log(categories?.name)
     setProducts(updatedList[0]?.products);
-    console.log(updatedList[0]?.products , 'soy la lista')
+    // console.log(updatedList[0]?.products , 'soy la lista')
   };
 
   const ShowProducts = () => {
@@ -65,7 +64,7 @@ const Products = (props) => {
         <div className="buttons d-flex justify-content-center mb-5 pb-5">
           <button
             className=" btn btn-outline-dark me-2"
-            onClick={() => filterProduct(products)}
+            onClick={() => getProducts()}
           >
             All
           </button>

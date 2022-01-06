@@ -1,6 +1,6 @@
 import React from "react";
- import fondo from "./fondox.svg"
-import Acerca from "./Acerca"
+//  import fondo from "./fondox.svg"
+ import Products2 from "./Products";
 
 class Home extends React.Component {
   render() {
@@ -19,7 +19,8 @@ class Home extends React.Component {
             </div>
           </div>
         </div> */}
-        <Acerca />
+        
+        <Products2 />
       </React.Fragment>
     );
   }

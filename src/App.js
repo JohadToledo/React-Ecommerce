@@ -8,6 +8,7 @@ import Checkout from "./components/Checkout";
 import Checkouted from "./components/Checkouted";
 import { Route, Routes } from "react-router-dom";
 import Cart from "./components/Cart";
+import Acerca from "./components/Acerca";
 import React from "react";
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route exact path="/checkouted" element={<Checkouted />}></Route>
           <Route exact path="/products/:slug" element={<Product />}></Route>
           <Route exact path="/cart" element={<Cart />}></Route>
+          <Route exact path="/acerca" element={<Acerca />}></Route>
       </Routes>
         <Footer/>
     </React.Fragment>

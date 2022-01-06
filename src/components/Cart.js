@@ -3,7 +3,7 @@ import {useSelector} from 'react-redux'
 import { addCart, delCart } from '../redux/action/index'
 import { NavLink } from "react-router-dom";
 import {  useDispatch} from "react-redux";
-import { fetchImageURL, fetchProduct } from "../api";
+import { fetchImageURL } from "../api";
 
 const Cart = () => {
     const state = useSelector((state)=> state.handleCart)
