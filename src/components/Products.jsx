@@ -5,12 +5,10 @@ import { fetchCategories, fetchImageURL, fetchProducts } from "../api";
 
 const Products = (props) => {
   // const { prod } = props;
-  
+
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
-  
-
 
   const getCategories = async () => {
     setLoading(true);
@@ -25,18 +23,17 @@ const Products = (props) => {
     console.log(products);
     setLoading(false);
   };
-  
 
   useEffect(() => {
     getCategories();
-    getProducts()
+    getProducts();
   }, []);
-  
+
   const Loading = () => {
     return (
       <>
         <div className="col-md-3">
-          <Skeleton height={350}/>
+          <Skeleton height={350} />
         </div>
         <div className="col-md-3">
           <Skeleton height={350} />
@@ -52,7 +49,7 @@ const Products = (props) => {
   };
 
   const filterProduct = (cat) => {
-    const updatedList = categories.filter((x)=>x?.name === cat);
+    const updatedList = categories.filter((x) => x?.name === cat);
     // console.log(categories?.name)
     setProducts(updatedList[0]?.products);
     // console.log(updatedList[0]?.products , 'soy la lista')
@@ -117,11 +114,12 @@ const Products = (props) => {
                     height={250}
                   />
                   <div className="card-body">
-                    <h5 className="card-title mb-0">
-                      {product.title}
-                    </h5>
+                    <h5 className="card-title mb-0">{product.title}</h5>
                     <p className="card-text lead fw-bold">${product.price}</p>
-                    <NavLink to={`/products/${product.slug}`} className="btn btn-outline-dark">
+                    <NavLink
+                      to={`/products/${product.slug}`}
+                      className="btn btn-outline-dark"
+                    >
                       Buy Now
                     </NavLink>
                   </div>

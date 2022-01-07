@@ -13,7 +13,7 @@ import React from "react";
 
 function App() {
   return (
-    <><React.Fragment>
+    <>
       <Navbar />
       <Routes>
           <Route exact path="/" element={<Home />}></Route>
@@ -24,9 +24,7 @@ function App() {
           <Route exact path="/cart" element={<Cart />}></Route>
           <Route exact path="/acerca" element={<Acerca />}></Route>
       </Routes>
-        <Footer/>
-    </React.Fragment>
-      
+      <Footer/>
     </>
   );
 }

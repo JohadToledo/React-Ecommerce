@@ -27,8 +27,8 @@ const Checkout = () => {
         <div className="row g-5">
           <div className="col-md-5 col-lg-4 order-md-last">
             <h4 className="d-flex justify-content-between align-items-center mb-3">
-              <span className="text-primary">Your cart</span>
-              <span className="badge bg-primary rounded-pill">
+              <span className="text-dark">Your cart</span>
+              <span className="badge bg-dark rounded-pill">
                 {state.length}
               </span>
             </h4>
@@ -212,7 +212,8 @@ const Checkout = () => {
 
               <NavLink
                 to={`/checkouted`}
-                className="w-100 btn btn-primary btn-lg"
+                className="w-100 btn btn-dark btn-lg"
+                onClick={() =>console.log('te clickeee')}
               >
                 Pay
               </NavLink>
