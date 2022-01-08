@@ -33,6 +33,9 @@ const handleCart = (state = cart, action) =>{
                     )
                 }
                 
+            
+            case 'CLEARCART':
+                return state = []
 
             default:
                 return state;

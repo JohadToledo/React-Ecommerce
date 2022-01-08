@@ -13,14 +13,12 @@ const Products = (props) => {
   const getCategories = async () => {
     setLoading(true);
     setCategories(await fetchCategories());
-    console.log(categories);
     setLoading(false);
   };
 
   const getProducts = async () => {
     setLoading(true);
     setProducts(await fetchProducts());
-    console.log(products);
     setLoading(false);
   };
 
@@ -105,15 +103,15 @@ const Products = (props) => {
         {products.map((product) => {
           return (
             <>
-              <div className="col-md-3 mb-4">
-                <div className="card h-100 text-center p-4" key={product.id}>
+              <div className="col-md-3 mb-4" key={product.id}>
+                <div className="card h-100 text-center p-4" >
                   <img
                     src={fetchImageURL(product.image?.url)}
                     className="card-img-top"
                     alt={product.title}
                     height={250}
                   />
-                  <div className="card-body">
+                  <div className="card-body" key={product.id}>
                     <h5 className="card-title mb-0">{product.title}</h5>
                     <p className="card-text lead fw-bold">${product.price}</p>
                     <NavLink

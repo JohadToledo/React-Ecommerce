@@ -1,10 +1,17 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
+import { clearCart } from "../redux/action";
+import { useDispatch } from "react-redux";
 // {product.quantity} X ${product.price} = ${product.quantity * product.price}
 
 const Checkout = () => {
   const state = useSelector((state) => state.handleCart);
+
+  const dispatch = useDispatch();
+  const clearProduct = (product) => {
+    dispatch(clearCart(product));
+  };
 
   var total = 0;
 
@@ -16,7 +23,7 @@ const Checkout = () => {
           <h6 className="my-0">{item.title}</h6>
         </div>
         <span className="text-muted">
-          ({item.quantity}) X ${item.price}{" "}
+          ({item.quantity}){" "} X ${item.price}{" "}
         </span>
       </li>
     );
@@ -213,7 +220,7 @@ const Checkout = () => {
               <NavLink
                 to={`/checkouted`}
                 className="w-100 btn btn-dark btn-lg"
-                onClick={() =>console.log('te clickeee')}
+                onClick={() => clearProduct()}
               >
                 Pay
               </NavLink>

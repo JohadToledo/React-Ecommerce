@@ -21,20 +21,7 @@ const Navbar = () => {
             <li className="nav-item">Home</li>
           </NavLink>
           <NavLink to="/acerca" style={{color:"black"}}>
-            <li className="nav-item">Acerca</li>
-          </NavLink>
-          <NavLink to="/products" style={{color:"black"}}>
-            <li className="nav-item">Coleccion</li>
-          </NavLink>
-          <NavLink to="/login" style={{color:"black"}}>
-            <li>
-              <button>Login</button>
-            </li>
-          </NavLink>
-          <NavLink to="/register">
-            <li>
-              <button>Register</button>
-            </li>
+            <li className="nav-item">About Us</li>
           </NavLink>
           <NavLink to="/cart" style={{color:"black"}}>
             <li className="nav-item"  >🛒 {state.length}</li>
