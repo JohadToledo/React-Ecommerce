@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import Skeleton from "react-loading-skeleton";
 import { fetchCategories, fetchImageURL, fetchProducts } from "../api";
+import Loader from "./Loader";
 
 const Products = (props) => {
   // const { prod } = props;
@@ -26,25 +26,6 @@ const Products = (props) => {
     getCategories();
     getProducts();
   }, []);
-
-  const Loading = () => {
-    return (
-      <>
-        <div className="col-md-3">
-          <Skeleton height={350} />
-        </div>
-        <div className="col-md-3">
-          <Skeleton height={350} />
-        </div>
-        <div className="col-md-3">
-          <Skeleton height={350} />
-        </div>
-        <div className="col-md-3">
-          <Skeleton height={350} />
-        </div>
-      </>
-    );
-  };
 
   const filterProduct = (cat) => {
     const updatedList = categories.filter((x) => x?.name === cat);
@@ -140,7 +121,7 @@ const Products = (props) => {
             </div>
           </div>
           <div className="row justify-content-center">
-            {loading ? <Loading /> : <ShowProducts />}
+            {loading ? <Loader /> : <ShowProducts />}
           </div>
         </div>
       </React.Fragment>

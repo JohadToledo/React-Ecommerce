@@ -181,3 +181,10 @@ footer a{
         text-decoration:none;
         background:#000;
     }
+
+    .spiner{
+      height: 50vh;
+      display: flex ;
+      align-items: center; 
+      justify-content: center;
+    }
