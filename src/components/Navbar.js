@@ -5,6 +5,14 @@ import { useSelector } from "react-redux";
 
 const Navbar = () => {
   const state = useSelector((state) => state.handleCart);
+
+  const totalItems=()=>{
+    let sum = 0 ;
+    for (let i = 0; i < state.length; i++){
+      sum += state[i].quantity 
+    }
+    return sum
+  }
   return (
     <>
       <div className="container">
@@ -27,7 +35,7 @@ const Navbar = () => {
           </div>
           <div className="col-md-auto">
             <NavLink to="/cart"  className='nav-linky'>
-              🛒 {state.length}
+              🛒 {totalItems()}
             </NavLink>
           </div>
         </div>
