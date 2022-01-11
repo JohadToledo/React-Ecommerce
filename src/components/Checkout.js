@@ -13,6 +13,14 @@ const Checkout = () => {
     dispatch(clearCart(product));
   };
 
+  const totalItems=()=>{
+    let sum = 0 ;
+    for (let i = 0; i < state.length; i++){
+      sum += state[i].quantity 
+    }
+    return sum
+  }
+
   var total = 0;
 
   const itemList = (item) => {
@@ -36,7 +44,7 @@ const Checkout = () => {
             <h4 className="d-flex justify-content-between align-items-center mb-3">
               <span className="text-dark">Your cart</span>
               <span className="badge bg-dark rounded-pill">
-                {state.length}
+                {totalItems()}
               </span>
             </h4>
             <ul className="list-group mb-3">
