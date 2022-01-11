@@ -3,7 +3,6 @@ import { useDispatch } from "react-redux";
 import { addCart } from "../redux/action";
 import { useParams } from "react-router";
 import { NavLink } from "react-router-dom";
-import Skeleton from "react-loading-skeleton";
 import { fetchImageURL, fetchProduct } from "../api";
 import Loader from "./Loader";
 
@@ -36,7 +35,7 @@ const Product = () => {
             <Loader />
           ) : (
             <>
-              <div className="col-md-6" key={product.id}>
+              <div className="col-md-6 center" key={product.id}>
                 {
                   <img
                     src={fetchImageURL(product.image?.url)}
@@ -46,7 +45,7 @@ const Product = () => {
                   />
                 }
               </div>
-              <div className="col-md-6">
+              <div className="col-md-6 my-auto center">
                 <h4 className="text-uppercase text-black-50">
                   {product.category}
                 </h4>

@@ -37,7 +37,9 @@ const Products = (props) => {
   const ShowProducts = () => {
     return (
       <>
-        <div className="buttons d-flex justify-content-center mb-5 pb-5">
+      <div className="container ">
+        <div className="row  buttons d-flex justify-content-center mb-5 pb-5">
+        <div className="center">
           <button
             className=" btn btn-outline-dark me-2"
             onClick={() => getProducts()}
@@ -81,20 +83,24 @@ const Products = (props) => {
             Other
           </button>
         </div>
+        </div>
+      </div>
         {products.map((product) => {
           return (
             <>
-              <div className="col-md-3 mb-4" key={product.id}>
+              <div className="cards col-md-3 mb-4 center" key={product.id}>
                 <div className="card h-100 text-center p-4" >
+                  <div className='card-img center'>
                   <img
                     src={fetchImageURL(product.image?.url)}
-                    className="card-img-top"
+                    className=""
                     alt={product.title}
                     height={250}
                   />
-                  <div className="card-body" key={product.id}>
-                    <h5 className="card-title mb-0">{product.title}</h5>
-                    <p className="card-text lead fw-bold">${product.price}</p>
+                  </div>
+                  <div className="card-body center" key={product.id}>
+                    <h5 className="card-title mb-0 center">{product.title}</h5>
+                    <p className="card-text lead fw-bold center">${product.price}</p>
                     <NavLink
                       to={`/products/${product.slug}`}
                       className="btn btn-outline-dark"
