@@ -16,7 +16,7 @@ const Checkouted = () => {
               <div className="content">
                 <h1>Payment Success !</h1>
                 <p>
-                  Tu pedido fue hecho, gracias por confiar en Petra!!.{" "}
+                  Your order is in progress!{" "}
                 </p>
                 <NavLink to={`/`}>Go to Home</NavLink>
               </div>
