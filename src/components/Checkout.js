@@ -3,7 +3,6 @@ import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { clearCart } from "../redux/action";
 import { useDispatch } from "react-redux";
-// {product.quantity} X ${product.price} = ${product.quantity * product.price}
 
 const Checkout = () => {
   const state = useSelector((state) => state.handleCart);

@@ -4,7 +4,6 @@ import { fetchCategories, fetchImageURL, fetchProducts } from "../api";
 import Loader from "./Loader";
 
 const Products = (props) => {
-  // const { prod } = props;
 
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
@@ -29,9 +28,7 @@ const Products = (props) => {
 
   const filterProduct = (cat) => {
     const updatedList = categories.filter((x) => x?.name === cat);
-    // console.log(categories?.name)
     setProducts(updatedList[0]?.products);
-    // console.log(updatedList[0]?.products , 'soy la lista')
   };
 
   const ShowProducts = () => {

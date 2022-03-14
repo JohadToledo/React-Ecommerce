@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { addCart } from "../redux/action";
 import { useParams } from "react-router";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { fetchImageURL, fetchProduct } from "../api";
 import Loader from "./Loader";
 
@@ -10,8 +10,7 @@ const Product = () => {
   const { slug } = useParams();
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(false);
-  // const [image, setImage] = useState()
-
+  
   const dispatch = useDispatch();
   const addProduct = (product) => {
     dispatch(addCart(product));
@@ -60,9 +59,9 @@ const Product = () => {
                   {" "}
                   Add 
                 </button>
-                <NavLink to="/cart" className="btn btn-dark ms-2 px-3 py-2">
+                <Link to="/cart" className="btn btn-dark ms-2 px-3 py-2">
                   Go to 🛒
-                </NavLink>
+                </Link>
               </div>
             </>
           )}
